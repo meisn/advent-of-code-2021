@@ -27,7 +27,7 @@ cnter = Counter(d['increment'] for d in part1(inp))
 print(f"Day1-Part1 - Answer: {cnter['+']}")
 
 
-def part2(inplist):
+def part2(inplist:list)->list:
     res = []
     windows = windowed(inp, 3)
     for window in windows:
