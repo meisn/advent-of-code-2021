@@ -30,7 +30,9 @@ def accum2(direction: str, val: int, horizontal: int, depth: int, aim: int) -> t
 
 
 def calc_position(inplist: list, accumulator: Callable) -> dict:
-    """Returns a dict for each step on the input."""
+    """
+    Returns a dict for each step on the input. The last item in the returned list contains the answer.
+    """
     horizontal = 0
     aim = 0
     depth = 0
