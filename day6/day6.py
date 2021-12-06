@@ -9,16 +9,16 @@ def read_input(file) -> dict[int, int]:
 def produce_fish(inpdict: dict, days: int) -> int:
 
     for _ in range(days):
-        new_freq = defaultdict(int)
+        newdict = defaultdict(int)
         for key in inpdict:
             if key == 0:
-                new_freq[6] += inpdict[key]
-                new_freq[8] = inpdict[key]
+                newdict[6] += inpdict[key]
+                newdict[8] = inpdict[key]
             else:
-                new_freq[key - 1] += inpdict[key]
-        inpdict = new_freq
+                newdict[key - 1] += inpdict[key]
+        inpdict = newdict
 
-    return sum(new_freq.values())
+    return sum(newdict.values())
 
 
 if __name__ == "__main__":
