@@ -5,7 +5,7 @@ with open("2021_puzzle1.txt") as f:
     inp = [int(line.strip()) for line in f]
 
 
-def part1(inplist:list)->list:
+def part1(inplist: list) -> list:
     res = []
     increment = None
     cmp = 0
@@ -23,17 +23,17 @@ def part1(inplist:list)->list:
     return res
 
 
-cnter = Counter(d['increment'] for d in part1(inp))
+cnter: Counter = Counter(d['increment'] for d in part1(inp))
 print(f"Day1-Part1 - Answer: {cnter['+']}")
 
 
-def part2(inplist:list)->list:
+def part2(inplist: list) -> list:
     res = []
-    windows = windowed(inp, 3)
+    windows = windowed(inplist, 3)
     for window in windows:
         res.append(sum(window))
     return res
 
 
-cnter2 = Counter(d['increment'] for d in part1(part2(inp)))
+cnter2: Counter = Counter(d['increment'] for d in part1(part2(inp)))
 print(f"Day1-Part2 - Answer: {cnter2['+']}")
